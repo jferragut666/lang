@@ -3,13 +3,13 @@ from flask import render_template
 import wtforms
 import flask_wtf
 
-@app.route('/')
+@app.route('/', methods=['post','get'])
 def main():
     form = RequestForm()
     if form.validate_on_submit():
         parsedData = parser(form.sentence.data)
-        print parsedData
-    
+        print form.sentence.data
+        
     return render_template('base.html', form=form, title = "home")
 
 class RequestForm(flask_wtf.FlaskForm):

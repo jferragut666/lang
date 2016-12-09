@@ -7,7 +7,7 @@ import flask_wtf
 @app.route('/', methods=['post','get'])
 def main():
     parsedData = 0
-    token = 0
+    
     form = RequestForm()
     if form.validate_on_submit():
         #parse sentence from the form
@@ -28,7 +28,8 @@ def main():
         #print parsedData
         
         return render_template('base.html', form=form, title = "home", data = lists)
-    except: return ""    
+    except: 
+        return render_template('base.html', form = form, title = "home")    
 
 class RequestForm(flask_wtf.FlaskForm):
     sentence = wtforms.StringField('Sentence', [wtforms.validators.InputRequired()])

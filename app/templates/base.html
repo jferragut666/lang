@@ -1,8 +1,12 @@
-<h1 style = "text-align:center;">Enter Sentence:</h1>
+<link rel="stylesheet" type="text/css" href='/lang/app/templates/design.css' />
+<script src='/lang/app/templates/test.js'></script>
+
+<h1 style = "text-align:center";>Enter Sentence:</h1>
 
 <form method="POST" action="/">
-{{ form.hidden_tag() }}
-<div style="text-align:center"> {{ form.sentence.label }} : {{ form.sentence() }} </div>
-<div style="text-align: center;"> {{ form.submit.label }} : {{ form.submit() }} </div>
+    {{ form.hidden_tag() }}
+    <div style = "text-align:center";> {{ form.sentence.label }} : {{ form.sentence() }} </div>
+    <div style = "text-align:center";> {{ form.submit.label }} : {{ form.submit() }} </div>
 </form>
-<p style = "text-align:center;">{{ data }}</p>
+
+<p style = "text-align:center";>{{ data }}</p>

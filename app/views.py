@@ -3,7 +3,12 @@ from flask import render_template
 import wtforms
 import flask_wtf
 #from run import parser
-
+@app.template_filter()
+def newLine(d):
+  lst = [] 
+  for i in d:
+    lst.append(i+"\n")
+  return lst
 @app.route('/', methods=['post','get'])
 def main():
     parsedData = 0
@@ -24,9 +29,7 @@ def main():
             lists.append(listy)
             print(listy)
             
-    
         #print parsedData
-        
         return render_template('base.html', form=form, title = "home", data = lists)
     except: 
         return render_template('base.html', form = form, title = "home")    

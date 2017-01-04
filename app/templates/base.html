@@ -2,10 +2,11 @@
 <script src='/lang/app/templates/test.js'></script>
 <style>
 table, th, td {
-    border: 1px solid black;
+    border: .0625em solid black;
 }
 </style>
-<h1 style = "text-align:center";>Enter Sentence:</h1>
+<body>
+<h1>Enter Sentence:</h1>
 
 <form method="POST" action="/">
     {{ form.hidden_tag() }}
@@ -14,7 +15,7 @@ table, th, td {
 </form>
 
 <!--<p style = "text-align:center";>{{ data }}</p>-->
-<!-- style="border:1px solid black;" -->
+<!-- style="border:.0625em solid black;" -->
 
 <table align = "center"  >
 <tr>
@@ -31,5 +32,5 @@ table, th, td {
   </tr>
 {% endfor %}
 </table>
-
-
+</body>
+<a href="bootstrap.html">about</a>

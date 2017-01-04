@@ -1,12 +1,15 @@
-<link rel="stylesheet" type="text/css" href='/lang/app/templates/design.css' />
+<!DOCTYPE html>
+<html>
+<head>
+<title> Part of Speech Finder</title>
+<link rel="icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='design.css') }}" />
 <script src='/lang/app/templates/test.js'></script>
-<style>
-table, th, td {
-    border: .0625em solid black;
-}
-</style>
+</head>
 <body>
-<h1>Enter Sentence:</h1>
+{% block navbar %}
+{% endblock %}
+<h1 class = "prompt">Enter sentence</h1>
 
 <form method="POST" action="/">
     {{ form.hidden_tag() }}
@@ -14,15 +17,13 @@ table, th, td {
     <div style = "text-align:center";> {{ form.submit.label }} : {{ form.submit() }} </div>
 </form>
 
-<!--<p style = "text-align:center";>{{ data }}</p>-->
-<!-- style="border:.0625em solid black;" -->
-
 <table align = "center"  >
 <tr>
     <th>Word</th>
     <th>Part of Speech</th>
     <th>Modifying</th>
     <th>Modifier</th>
+    <th>Explained Parts of speech</th>
 </tr>
 {% for item in data %}
   <tr>
@@ -33,4 +34,4 @@ table, th, td {
 {% endfor %}
 </table>
 </body>
-<a href="bootstrap.html">about</a>
+</hmtl>

@@ -20,3 +20,7 @@ https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html is a
 http://stackoverflow.com/questions/1833252/java-stanford-nlp-part-of-speech-labels is a secondary interpretation of the parts of speech tags, which
     examples of the category as definitions
 http://www.surdeanu.info/mihai/teaching/ista555-fall13/readings/PennTreebankConstituents.html#CC includes more tags
+
+What the official README will be:
+go to langserver-erikferragut.c9users.io:8080
+log in with username:  password:  

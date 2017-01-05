@@ -36,10 +36,10 @@ def main():
         lists = []
         print "try success!"
         for token in sent:
-            print token.pos_
-            print tableTerms[token.pos_]
+            print token.tag_
+            print tableTerms[token.tag_]
            
-            listy=[token.orth_, token.pos_, token.dep_,token.head.orth_, tableTerms[token.pos_]]
+            listy=[token.orth_, token.tag_, token.dep_,token.head.orth_, tableTerms[token.tag_]]
             lists.append(listy)
             print(listy)
     else:        

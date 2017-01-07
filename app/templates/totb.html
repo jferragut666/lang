@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'design.css') }}" />
+        <script src='/lang/app/templates/test.js'></script>
+        {% block title %} {% endblock %}
+        
+    </head>
+    <body>
+        <div class="navbar navbar-default"> <!--Below is the code for the navigation bar at the top-left of the page.
+        It works using a built-in bootstrap class called navbar. As this piece of code is on the base template,
+        the navbar will show up on every page of the website.-->
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('main') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </div>
+        
+        
+        <div class="container">
+        {% block stuffa %}{% endblock %} <!-- This line is where the majority of a website's information is put -->
+        </div>
+    </body>
+</html>
+
+<!-- This file contains the base template for the website that all the pages of the website inherit from. This page-->
+<!--has info that, no matter the page, will be present. To allow variability among the pages, Jinja2 templates are used.-->
+<!--For example,  {% block variableName %} {% endblock %} this block allows each--> 
+<!--child to have its own variableName.-->

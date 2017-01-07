@@ -11,28 +11,31 @@ tableTerms = {'PRP$': 'Possessive pronoun ', 'VBG': 'Verb, gerund or present par
               'NNPS': 'Proper noun, plural ', 'JJS': 'Adjective, superlative ', 'JJR': 'Adjective, comparative ', 'SYM': 'Symbol ', 'UH': 'Interjection ', '.':'Punctuation'}
 
 
-#from run import parser
+'''
 @app.template_filter()
 def newLine(d):
   lst = [] 
   for i in d:
     lst.append(i+"\n")
   return lst
+  '''
+#@app.route is an event handler that returns a webpage if you go to the correct url.
 @app.route('/', methods=['post','get'])
 def main():
     parsedData = 0
-    
     form = RequestForm()
+    #if submit is pressed
     if form.validate_on_submit():
         #parse sentence from the form
         parsedData = app.parser(form.sentence.data)
         sents = []
         sents = parsedData.sents
+        #put the sentences in a table (this is necessary for SpaCy to work)
         for span in parsedData.sents:
             sent = [parsedData[i] for i in range(span.start, span.end)]
             break
         lists = []
-        
+        #for each word in the sentence make a list of attributes such as part of speech, modifier, and explanation.
         for token in sent:
             if token.tag_ in tableTerms:
                 listy=[token.orth_, token.tag_, token.dep_,token.head.orth_, tableTerms[token.tag_]]
@@ -44,8 +47,9 @@ def main():
     else:        
         lists=[]
     return render_template('index.html', form=form, data = lists)
-    
+    #return a web page with data = lists to send the information to the webpage, index.html.
         
+#RequestForm is used to create forms.
 class RequestForm(flask_wtf.FlaskForm):
     sentence = wtforms.StringField('Sentence', [wtforms.validators.InputRequired()])
     submit = wtforms.SubmitField()

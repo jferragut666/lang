@@ -59,7 +59,7 @@ def main():
 #RequestForm is used to create forms.
 class RequestForm(flask_wtf.FlaskForm):
     sentence = wtforms.StringField('Sentence', [wtforms.validators.InputRequired()],
-                                   widget=TextArea())
+                                   widget=TextInput())
     submit = wtforms.SubmitField()
 
 #Other pages

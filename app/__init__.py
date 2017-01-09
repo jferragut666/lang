@@ -8,6 +8,3 @@ print "Building parser!"
 app.parser = English()
 
 from app import views
-
-
-#if __name__ == '__main__':

@@ -2,6 +2,8 @@ from app import app
 from flask import render_template
 import wtforms
 import flask_wtf
+from wtforms.widgets import TextArea
+
 tableTerms = {'PRP$': 'Possessive pronoun ', 'VBG': 'Verb, gerund or present participle ', 'FW': 'Foreign word ', 'VBN': 'Verb, past participle ',
               'VBP': 'Verb, non-3rd person singular present ', 'WDT': 'Wh-determiner ', 'JJ': 'Adjective ', 'WP': 'Wh-pronoun ', 'VBZ': 'Verb, 3rd person singular present ',
               'DT': 'Determiner ', 'RP': 'Particle ', 'NN': 'Noun, singular or mass ', 'VBD': 'Verb, past tense ', 'POS': 'Possessive ending ', 'TO': 'to',
@@ -22,6 +24,10 @@ def newLine(d):
 #@app.route is an event handler that returns a webpage if you go to the correct url.
 @app.route('/', methods=['post','get'])
 def main():
+    '''
+    Serves the main or index page where users can enter a sentence and will
+    see the results.
+    '''
     parsedData = 0
     form = RequestForm()
     #if submit is pressed
@@ -49,16 +55,20 @@ def main():
     return render_template('index.html', form=form, data = lists)
     #return a web page with data = lists to send the information to the webpage, index.html.
         
+        
 #RequestForm is used to create forms.
 class RequestForm(flask_wtf.FlaskForm):
-    sentence = wtforms.StringField('Sentence', [wtforms.validators.InputRequired()])
+    sentence = wtforms.StringField('Sentence', [wtforms.validators.InputRequired()],
+                                   widget=TextArea())
     submit = wtforms.SubmitField()
 
-#Andrew's stuff, trying to create more pages
+#Other pages
 
 @app.route('/about-us')
 def about():
     return render_template('Aboutus.html')
+    
+    
 @app.route('/explanations')
 def explain():
     return render_template('Explanations.html')

@@ -1,5 +1,27 @@
 # lang
 
+need to do on rubric:
+User
+    In-line documentation thoroughness
+    Appropriateness of icons, images, etc. to respective functions
+    header, maybe picture
+    Creativity demonstrated in app purpose and/or the way functions are presented
+    Thoroughness of built-in Help, if needed
+    Portability across “standard” browsers (IE, Firefox, Safari, Chrome)- 8pts
+    Mobile compatibility (iOS, Android)-2pts
+Technical:
+    Graceful handling (or prevention) of and recovery from invalid user input
+    Informative error messages
+    Review of app code for good design and coding practices:
+        Readability
+        Modularity
+        Data-code separation
+        In-line documentation thoroughness
+    error-when pressing enter
+    error-very oversized table
+    Thoroughness of built-in Help, if needed
+
+
 1. use bootstrapping to support mobile phones-Andrew and Steven
 2. webpage style-html coding
 3. make spacy output on webpage, language sentences structured jacob try to do this
@@ -10,6 +32,8 @@
 
 
 Ethan progress:
+
+By the way, I just deleted some stuff in "space", if there is any new, wierd errors.
 
 mainly http://repository.upenn.edu/cgi/viewcontent.cgi?article=1603&context=cis_reports is full article where the tags were based on
 

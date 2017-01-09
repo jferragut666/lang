@@ -1,25 +1,39 @@
-{% extends "totb.html" %}
+{% extends "totb.html" %} <!-- This line of code says that this page inherits from the base template, totb.html. --> 
+
 
 {% block title %} 
-Part of speech finder 
+<title>Part of Speech Finder</title>
 {% endblock %}
 
 
+
+
+
 {% block stuffa %}
-<h1 class = "prompt">Enter sentence</h1>
+<div class = "background">
+
+<div class = "col-12">
+  <div class="alert alert-warning" role="alert">
+  <h1 class = "prompt">Enter a sentence to learn about its structure!</h1>
+  </div>
+</div>
+
 <div class="row">
-  <div class="col-xs-6 col-md-4">
-<form method="POST" action="/">
+<div class="col-12">
+
+<form method="POST" action="/" style= "height:20em ">
     {{ form.hidden_tag() }}
-    <div style = "text-align:center";> {{ form.sentence.label }} : {{ form.sentence() }} {{ form.submit() }}</div>
+    <div class="mainform" style= "text-align: center"> {{ form.sentence(cols="120") }} {{ form.submit() }}</div>
 </form>
+
 </div>
 </div>
 
 {% if data %}
 <div class="row">
-  <div class="col-xs-6 col-md-4">
-<table align = "center"  >
+<p> </p>
+<p></p>
+<table id= "output" align= "center" "table-bordered">
 <tr>
     <th>Word</th>
     <th>Part of Speech</th>
@@ -38,4 +52,6 @@ Part of speech finder
 </table>
 </div>
 </div>
+</div>
 {% endblock %}
+

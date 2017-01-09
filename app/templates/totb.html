@@ -3,24 +3,40 @@
     <head>
         <meta charset = "utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'design.css') }}" />
-        <script src='/lang/app/templates/test.js'></script>
+        <!-- Bootstrap Links and Scripts -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
         {% block title %} {% endblock %}
-        
     </head>
     <body>
+        
         <div class="navbar navbar-default"> <!--Below is the code for the navigation bar at the top-left of the page.
         It works using a built-in bootstrap class called navbar. As this piece of code is on the base template,
         the navbar will show up on every page of the website.-->
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('main') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-            </ul>
+            <table>
+                <tr>
+                    <ul class="nav navbar-nav">
+                        
+                    <li>
+                        <button type="button" onclick="location.href= '{{ url_for('main') }}'">Home</button>
+                        <button type="button" onclick="location.href= '{{ url_for('about') }}'">About</button>
+                        <button type="button" onclick="location.href= '{{ url_for('explain') }}'">Explanations of Keywords</button>
+                    </li>
+                    </ul>
+        
+                </tr>
+            </table>
         </div>
         
         
         <div class="container">
+        <div class="background">
         {% block stuffa %}{% endblock %} <!-- This line is where the majority of a website's information is put -->
+        </div>
         </div>
     </body>
 </html>

@@ -1,12 +1,27 @@
-h1 {
-    text-align: center;
+.aboutus {
+    text-align: left;
+    font-size: 1em;
+}
+h2.aboutus {
+    text-align: left;
+
+
     font-size: 3em;
 }
+h1.explantions {
+    text-align: left;
+    font-size: 3em;
+}
+
+h1.prompt {
+    text-align: center;
+}
+
 
 form {
     text-align: center;
     font-size: 1.5em;
-   
+
 }
 
 p {
@@ -14,22 +29,71 @@ p {
     font-size: 1em;
 }
 
-body {
-    background-color: olive;
-    
-    
+h3 {
+    font-size: 5em;
 }
-table, th, td {
-    border: 0.0625em solid black;
+
+table tr:nth-child(even) {
+    background-color: #419b2d;
+}
+
+table tr:nth-child(odd) {
+    background-color: #4CAF50;
+}
+
+table td, table th {
+    border: 1px solid black;
+}
+
+table tr:first-child th {
+    border-top: 0;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+
+table tr td:first-child, table tr th:first-child {
+    border-left: 0;
+}
+
+table tr td:last-child, table tr th:last-child {
+    border-right: 0;
+}
+
+table, th {
+    background-color: #4CAF50;
     color: rgb(23,15,20);
+    text-align: center;
     font-size: 1.5em;
+    padding: 4px;
 }
+
+
+  
+  
+
 title {
     font-family: bold;
-    font-size: 25em;
+    font-size: 5em;
 }
-.aboutus {
-    text-align: left;
-    font-size: 1em;
-    
+
+
+
+
+
+.background {
+  width: 100%;
+
+  background-image: url("Library.jpg");
+
+  
+
+  background-size: 100% 100%;
+}
+
+#output {
+    text-align: center;
+    border-collapse: collapse;
+    border: 8px solid black;
 }

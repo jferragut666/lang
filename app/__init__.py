@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask #The program that we used to make a webpage was Flask
 from spacy.en import English
 
 app = Flask(__name__)

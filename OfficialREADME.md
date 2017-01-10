@@ -1,3 +1,6 @@
+Our program takes a sentence as input and returns the part of speech of each word, as well as other useful information. This idea has been done before, but it is hard to understand the output
+it gives you, which limits its usefulness.
+
 To run the program, type python lang/run.py into the ubuntu command prompt (open one by pressing Alt-T
 or the plus button by the files).
 

@@ -2,8 +2,9 @@ from app import app
 from flask import render_template
 import wtforms
 import flask_wtf
-from wtforms.widgets import TextArea
+from wtforms.widgets import TextInput
 
+#this is all of the parts of speech and their "translation" from the acronym to a description
 tableTerms = {'PRP$': 'Possessive pronoun ', 'VBG': 'Verb, gerund or present participle ', 'FW': 'Foreign word ', 'VBN': 'Verb, past participle ',
               'VBP': 'Verb, non-3rd person singular present ', 'WDT': 'Wh-determiner ', 'JJ': 'Adjective ', 'WP': 'Wh-pronoun ', 'VBZ': 'Verb, 3rd person singular present ',
               'DT': 'Determiner ', 'RP': 'Particle ', 'NN': 'Noun, singular or mass ', 'VBD': 'Verb, past tense ', 'POS': 'Possessive ending ', 'TO': 'to',
@@ -12,15 +13,6 @@ tableTerms = {'PRP$': 'Possessive pronoun ', 'VBG': 'Verb, gerund or present par
               'CD': 'Cardinal number ', 'EX': 'Existential ', 'IN': 'Preposition or subordinating conjunction ', 'WP$': 'Possessive wh-pronoun ', 'MD': 'Modal ',
               'NNPS': 'Proper noun, plural ', 'JJS': 'Adjective, superlative ', 'JJR': 'Adjective, comparative ', 'SYM': 'Symbol ', 'UH': 'Interjection ', '.':'Punctuation'}
 
-
-'''
-@app.template_filter()
-def newLine(d):
-  lst = [] 
-  for i in d:
-    lst.append(i+"\n")
-  return lst
-  '''
 #@app.route is an event handler that returns a webpage if you go to the correct url.
 @app.route('/', methods=['post','get'])
 def main():
@@ -58,6 +50,9 @@ def main():
         
 #RequestForm is used to create forms.
 class RequestForm(flask_wtf.FlaskForm):
+    '''
+    Used for getting the user's sentence
+    '''
     sentence = wtforms.StringField('Sentence', [wtforms.validators.InputRequired()],
                                    widget=TextInput())
     submit = wtforms.SubmitField()
@@ -66,14 +61,16 @@ class RequestForm(flask_wtf.FlaskForm):
 
 @app.route('/about-us')
 def about():
+    '''
+    Used for going to the about-us page
+    '''
     return render_template('Aboutus.html')
     
     
 @app.route('/explanations')
 def explain():
+    '''
+    Used for going to the explanations page
+    '''
     return render_template('Explanations.html')
 
-@app.route('/bootstrap')
-def bootstrapstuff():
-    form = RequestForm()
-    return render_template('bootstrap.html', form = form, title = "yoyo")

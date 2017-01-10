@@ -12,7 +12,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
         {% block title %} {% endblock %}
     </head>
-    <body>
+    <body background= {% block background %} {% endblock %} style= 
+        "background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 100%;
+        background-attachment: absolute;" >
         
         <div class="navbar navbar-default"> <!--Below is the code for the navigation bar at the top-left of the page.
         It works using a built-in bootstrap class called navbar. As this piece of code is on the base template,
@@ -23,8 +27,8 @@
                         
                     <li>
                         <button type="button" onclick="location.href= '{{ url_for('main') }}'">Home</button>
-                        <button type="button" onclick="location.href= '{{ url_for('about') }}'">About</button>
-                        <button type="button" onclick="location.href= '{{ url_for('explain') }}'">Explanations of Keywords</button>
+                        <button type="button" onclick="location.href= '{{ url_for('about') }}'">About Us</button>
+                        <button type="button" onclick="location.href= '{{ url_for('explain') }}'">Explanations of Parts of Speech</button>
                     </li>
                     </ul>
         
@@ -34,9 +38,9 @@
         
         
         <div class="container">
-        <div class="background">
+        
         {% block stuffa %}{% endblock %} <!-- This line is where the majority of a website's information is put -->
-        </div>
+        
         </div>
     </body>
 </html>

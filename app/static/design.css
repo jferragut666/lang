@@ -1,13 +1,13 @@
+/* This page has all the formatting for the webpage; this page is responsible for many of the colors,
+text alignment changes, font size changes, etc. in the program (the rest is done with built - in styling.)
+CSS is used because of its user - friendliness.*/
+
 .aboutus {
     text-align: left;
-    font-size: 1em;
+    font-size: 1.5em;
 }
-h2.aboutus {
-    text-align: left;
 
 
-    font-size: 3em;
-}
 h1.explantions {
     text-align: left;
     font-size: 3em;
@@ -21,7 +21,6 @@ h1.prompt {
 form {
     text-align: center;
     font-size: 1.5em;
-
 }
 
 p {
@@ -34,11 +33,11 @@ h3 {
 }
 
 table tr:nth-child(even) {
-    background-color: #419b2d;
+    background-color: #cba079;
 }
 
 table tr:nth-child(odd) {
-    background-color: #4CAF50;
+    background-color: #dbc099;
 }
 
 table td, table th {
@@ -65,31 +64,20 @@ table, th {
     background-color: #4CAF50;
     color: rgb(23,15,20);
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 4px;
 }
-
-
-  
-  
 
 title {
     font-family: bold;
     font-size: 5em;
 }
 
-
-
-
-
-.background {
-  width: 100%;
-
-  background-image: url("Library.jpg");
-
-  
-
-  background-size: 100% 100%;
+body {
+ background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 100%;
+    
 }
 
 #output {

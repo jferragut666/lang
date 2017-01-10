@@ -1,57 +1,57 @@
 {% extends "totb.html" %} <!-- This line of code says that this page inherits from the base template, totb.html. --> 
 
 
-{% block title %} 
-<title>Part of Speech Finder</title>
-{% endblock %}
+  {% block title %} 
+  <title>Part of Speech Finder</title>
+  {% endblock %}
+  
+  <!--This line adds the picture of the library to the background of this page.-->
+  {% block background %}
+    "{{ url_for('static', filename = 'Library.jpg') }}" 
+  {% endblock %}
+  
 
-
-
-
-
-{% block stuffa %}
-<div class = "background">
-
-<div class = "col-12">
-  <div class="alert alert-warning" role="alert">
-  <h1 class = "prompt">Enter a sentence to learn about its structure!</h1>
-  </div>
-</div>
-
-<div class="row">
-<div class="col-12">
-
-<form method="POST" action="/" style= "height:20em ">
-    {{ form.hidden_tag() }}
-    <div class="mainform" style= "text-align: center"> {{ form.sentence(cols="120") }} {{ form.submit() }}</div>
-</form>
-
-</div>
-</div>
-
-{% if data %}
-<div class="row">
-<p> </p>
-<p></p>
-<table id= "output" align= "center" "table-bordered">
-<tr>
-    <th>Word</th>
-    <th>Part of Speech</th>
-    <th>Modifying</th>
-    <th>Modifier</th>
-    <th>Explained Parts of speech</th>
-</tr>
-{% endif %}
-{% for item in data %}
-  <tr>
-    {% for stuff in item %}
-      <td>{{ stuff }}</td>
-    {% endfor %}
-  </tr>
-{% endfor %}
-</table>
-</div>
-</div>
-</div>
-{% endblock %}
-
+  {% block stuffa %}
+  <!--Here (and throughout the website), bootstrap is used (the classes used in <div></div>s) to help the website work better on phones -->
+    <div class = "row" style = "height: 1em"></div>
+    <div class = "row">
+    <div class = "col-1"></div>
+    <div class = "col-10">
+      <div class="alert alert-warning" role="alert">
+      <h1 class = "prompt">Enter a sentence to learn about its structure!</h1>
+      </div>
+    </div>
+    <div class = "col-1"></div>
+    </div>
+  <!-- Below, a form is used to take the sentence that the user inputted -->
+    <div class="col-12">
+      <form method="POST" action="/" style = "height: 7em">
+        {{ form.hidden_tag() }}
+        <div class="mainform" style= "text-align: center">
+          <input class="form-control col-xs-10" id="sentence" name="sentence" type="text" value="">
+        </div> 
+        {{ form.submit() }}
+      </form>
+    </div>
+  <!-- This is where the outputted data is displayed -->
+    {% if data %}
+    <div class="col-12">
+      <table id= "output" align= "center" "table-bordered">
+        <tr>
+          <th>Word</th>
+          <th>Part of Speech Acronym</th>
+          <th>Modifier</th>
+          <th>Modifying</th>
+          <th>Explained acronyms</th>
+        </tr>
+        {% endif %}
+        {% for item in data %}
+        <tr>
+          {% for stuff in item %}
+          <td>{{ stuff }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endblock %}

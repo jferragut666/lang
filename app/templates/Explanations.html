@@ -1,7 +1,9 @@
 {% extends "totb.html" %}
-
+<!-- This page is used as a reference for people who may be unsure on what each Part of Speech is. However, we didn't 
+want to overwhelm users with too much information on the subject, so we added a link in case anyone wanted to do 
+further research on the subject.-->
 {% block title %}
-What each acronym means: 
+<title> Parts of Speech</title>
 {% endblock %}
 
 {% block navbar %}
@@ -9,20 +11,27 @@ What each acronym means:
 
 {% block stuffa %}
 
-<div>
-  <h2> What each acronym means:</h2>
-  <table class="table tabler-hover">
-    <thead>
-      <tr>
-        <th>Acronym</th>
-        <th>Explanation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
+<div class = "aboutus">
+  <div class= "col-12">
+  <h1> Parts of Speech: </h1>
+  <h3>In the English language, there are eight major types of words. They are:</h3>
+  <ol>
+    <li>Noun: Nouns are a person, place, thing, or idea. If the noun refers to a specific thing, then it is called a proper noun. <br> Ex. happiness, Jack, lunchbox, California</li>
+    <li>Verb: Verbs show an action done by the subject of a sentence or the state of being of the subject of the sentence.  <br> Ex. am, is, run, talk, read </li>
+    <li>Pronoun: Pronouns are words that take the place of nouns. <br> Ex. I, she, him, they</li>
+    <li>Adjective: Adjectives are words that describe nouns or pronouns. <br> Ex. red, big, happy, forty-two</li>
+    <li>Adverb: Adverb are words that describe verbs. Adverbs can describe the where, when, how, or degree of a verb.<br> Ex. slowly, well, cheerfully, very</li>
+    <li>Preposition: Prepositions are words that specify the setting of something. <br> Ex. of, before, during, below</li>
+    <li>Conjuction: Conjuctions are words that join phrases together. There are only seven conjuctions: for, and, not, but, or, yet, and so.</li>
+    <li>Interjection: Interjections are words that show an emotion. They are usually followed by an exclamation point. <br> Ex. Ouch!, Eek!, Hi!, Wahoo! </li>
+    
+  </ol>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <h3> For more information on Parts of Speech, <a href = http://partofspeech.org/> Click here </a></h3>
+  
+</div>
 </div>
 
 {% endblock %}

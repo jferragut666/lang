@@ -12,11 +12,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
         {% block title %} {% endblock %}
     </head>
-    <body background= {% block background %} {% endblock %} style= 
-        "background-repeat: no-repeat;
-        background-position: center top;
-        background-size: 100%;
-        background-attachment: absolute;" >
+    <body {% block background %} {% endblock %} >
+        
+        {% block logo %} 
+        {% endblock %}
         
         <div class="navbar navbar-default"> <!--Below is the code for the navigation bar at the top-left of the page.
         It works using a built-in bootstrap class called navbar. As this piece of code is on the base template,

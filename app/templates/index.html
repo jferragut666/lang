@@ -7,9 +7,15 @@
   
   <!--This line adds the picture of the library to the background of this page.-->
   {% block background %}
-    "{{ url_for('static', filename = 'Library.jpg') }}" 
+  background= "{{ url_for('static', filename = 'Library.jpg') }}" style= 
+        "background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 100%;
+        background-attachment: absolute;"
+     
   {% endblock %}
   
+  {% block logo %}{% endblock %}
 
   {% block stuffa %}
   <!--Here (and throughout the website), bootstrap is used (the classes used in <div></div>s) to help the website work better on phones -->
@@ -42,7 +48,7 @@
           <th>Part of Speech Acronym</th>
           <th>Modifier</th>
           <th>Modifying</th>
-          <th>Explained acronyms</th>
+          <th>Acronym meaning</th>
         </tr>
         {% endif %}
         {% for item in data %}
